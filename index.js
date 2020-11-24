@@ -66,7 +66,7 @@ client.query(sqlQuery, inputData, (err, result) => {
 
     const ownerId = result.rows[0].owner_id;
 
-    const ownerNameQuery = `SELECT * FROM owners WHERE id='${ownerId}'`;
+    const ownerNameQuery = `SELECT * FROM owners WHERE id=${ownerId}`;
 
     // logic for 2nd query
     client.query(ownerNameQuery, (ownerNameQueryError, ownerNameQueryResult) => {
