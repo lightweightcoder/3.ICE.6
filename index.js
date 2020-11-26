@@ -93,14 +93,14 @@ client.query(sqlQuery, inputData, (err, result) => {
 
       // logic to store the number of cats for each owner
       for (let i = 0; i < result.rows.length; i += 1) {
-      // get the current owner_id in the cats table
+        // get the current owner_id in the cats table
         const current = result.rows[i].owner_id;
 
         if (!ownerIdAndNumOfCats[current]) {
-        // if key (owner_id) does not exist, add the key
+          // if key (owner_id) does not exist, add the key
           ownerIdAndNumOfCats[current] = 1;
         } else {
-        // if key exists, then increment the value (num of cats) by 1
+          // if key exists, then increment the value (num of cats) by 1
           ownerIdAndNumOfCats[current] += 1;
         }
       }
